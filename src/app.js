@@ -6,6 +6,8 @@ const { foreCast } = require("./utils/forecast");
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 //Define paths for express config
 const publicPathDirectory = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
@@ -72,6 +74,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen("3000", () => {
+app.listen(port, () => {
   console.log("server is up");
 });
